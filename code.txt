@@ -1,0 +1,154 @@
+methods = [
+    'NoSMOTE',
+    'SMOTE',
+    'SMOTE_TomekLinks',
+    'SMOTE_ENN',
+    'Borderline_SMOTE1',
+    'Borderline_SMOTE2',
+    'ADASYN',
+    'AHC',
+    'LLE_SMOTE',
+    'distance_SMOTE',
+    'SMMO',
+    'polynom_fit_SMOTE_bus',
+    'polynom_fit_SMOTE_mesh',
+    'polynom_fit_SMOTE_star',
+    'polynom_fit_SMOTE_poly',
+    'Stefanowski',
+    'Safe_Level_SMOTE',
+    'MSMOTE',
+    'DE_oversampling',
+    'SMOBD',
+    'SUNDO',
+    'MSYN',
+    'SVM_balance',
+    'TRIM_SMOTE',
+    'SMOTE_RSB',
+    'ProWSyn',
+    'SL_graph_SMOTE',
+    'NRSBoundary_SMOTE',
+    'LVQ_SMOTE',
+    'SOI_CJ',
+    'ROSE',
+    'SMOTE_OUT',
+    'SMOTE_Cosine',
+    'Selected_SMOTE',
+    'LN_SMOTE',
+    'MWMOTE',
+    'PDFOS',
+    'IPADE_ID',
+    'RWO_sampling',
+    'NEATER',
+    'DEAGO',
+    'Gazzah',
+    'MCT',
+    'ADG',
+    'SMOTE_IPF',
+    'KernelADASYN',
+    'MOT2LD',
+    'V_SYNTH',
+    'OUPS',
+    'SMOTE_D',
+    'SMOTE_PSO',
+    'CURE_SMOTE',
+    'SOMO',
+    'ISOMAP_Hybrid',
+    'CE_SMOTE',
+    'Edge_Det_SMOTE',
+    'CBSO',
+    'E_SMOTE',
+    'DBSMOTE',
+    'ASMOBD',
+    'Assembled_SMOTE',
+    'SDSMOTE',
+    'DSMOTE',
+    'G_SMOTE',
+    'NT_SMOTE',
+    'Lee',
+    'SPY',
+    'SMOTE_PSOBAT',
+    'MDO',
+    'Random_SMOTE',
+    'ISMOTE',
+    'VIS_RST',
+    'GASMOTE',
+    'A_SUWO',
+    'SMOTE_FRST_2T',
+    'AND_SMOTE',
+    'NRAS',
+    'AMSCO',
+    'SSO',
+    'NDO_sampling',
+    'DSRBF',
+    'Gaussian_SMOTE',
+    'kmeans_SMOTE',
+    'Supervised_SMOTE',
+    'SN_SMOTE',
+    'CCR',
+    'ANS',
+    'cluster_SMOTE',
+    'SYMPROD',
+    'SMOTEWB'
+]
+
+best_method = None
+best_tpr = 0  
+best_metrics = {}
+X_train = X_train.astype('float32')
+
+with open("model_output.txt", "w") as file:
+    for method in methods:
+        oversampler_class = getattr(sv, method)
+        oversampler = oversampler_class()
+
+        try:
+            X_samp, y_samp = oversampler.sample(X_train, y_train)
+        except Exception as e:
+            file.write(f"Error with {method}: {str(e)}\n")
+            continue
+
+        xgb_model = XGBClassifier()
+        xgb_model.fit(X_samp, y_samp)
+
+        y_validation = xgb_model.predict(X_val)
+        y_validation_prob = xgb_model.predict_proba(X_val)[:, 1]
+
+        roc_auc = roc_auc_score(y_val, y_validation_prob)
+        precision = precision_score(y_val, y_validation)
+        recall = recall_score(y_val, y_validation)
+        f1 = f1_score(y_val, y_validation)
+        conf_matrix = confusion_matrix(y_val, y_validation)
+
+        tn, fp, fn, tp = conf_matrix.ravel()
+        tpr_fraud = tp / (tp + fn)  
+
+        file.write(f"Method: {method}\n")
+        file.write(f"ROC AUC Score: {roc_auc:.4f}\n")
+        file.write(f"Precision: {precision:.4f}\n")
+        file.write(f"Recall: {recall:.4f}\n")
+        file.write(f"F1 Score: {f1:.4f}\n")
+        file.write("Confusion Matrix:\n")
+        file.write(f"{conf_matrix}\n")
+        file.write(f"True Positive Rate (Fraudulent Transactions): {tpr_fraud:.4f}\n")
+        file.write("-" * 40 + "\n")
+
+        if tpr_fraud > best_tpr:
+            best_tpr = tpr_fraud
+            best_method = method
+            best_metrics = {
+                'roc_auc': roc_auc,
+                'precision': precision,
+                'recall': recall,
+                'f1': f1,
+                'conf_matrix': conf_matrix,
+                'tpr_fraud': tpr_fraud
+            }
+
+    file.write(f"\nBest Method: {best_method}\n")
+    file.write(f"Best True Positive Rate (Fraudulent Transactions): {best_metrics['tpr_fraud']:.4f}\n")
+    file.write(f"Best ROC AUC Score: {best_metrics['roc_auc']:.4f}\n")
+    file.write(f"Best Precision: {best_metrics['precision']:.4f}\n")
+    file.write(f"Best Recall: {best_metrics['recall']:.4f}\n")
+    file.write(f"Best F1 Score: {best_metrics['f1']:.4f}\n")
+    file.write("Best Confusion Matrix:\n")
+    file.write(f"{best_metrics['conf_matrix']}\n")
