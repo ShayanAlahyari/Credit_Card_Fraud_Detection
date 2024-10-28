@@ -1,0 +1,160 @@
+Method: NoSMOTE
+ROC AUC Score: 0.9854
+Precision: 0.8710
+Recall: 0.7500
+F1 Score: 0.8060
+Confusion Matrix:
+[[22767     4]
+ [    9    27]]
+True Positive Rate (Fraudulent Transactions): 0.7500
+----------------------------------------
+Method: SMOTE
+ROC AUC Score: 0.9762
+Precision: 0.7561
+Recall: 0.8611
+F1 Score: 0.8052
+Confusion Matrix:
+[[22761    10]
+ [    5    31]]
+True Positive Rate (Fraudulent Transactions): 0.8611
+----------------------------------------
+Method: SMOTE_TomekLinks
+ROC AUC Score: 0.9807
+Precision: 0.7500
+Recall: 0.8333
+F1 Score: 0.7895
+Confusion Matrix:
+[[22761    10]
+ [    6    30]]
+True Positive Rate (Fraudulent Transactions): 0.8333
+----------------------------------------
+Method: SMOTE_ENN
+ROC AUC Score: 0.9854
+Precision: 0.8710
+Recall: 0.7500
+F1 Score: 0.8060
+Confusion Matrix:
+[[22767     4]
+ [    9    27]]
+True Positive Rate (Fraudulent Transactions): 0.7500
+----------------------------------------
+Method: Borderline_SMOTE1
+ROC AUC Score: 0.9872
+Precision: 0.7895
+Recall: 0.8333
+F1 Score: 0.8108
+Confusion Matrix:
+[[22763     8]
+ [    6    30]]
+True Positive Rate (Fraudulent Transactions): 0.8333
+----------------------------------------
+Method: Borderline_SMOTE2
+ROC AUC Score: 0.9857
+Precision: 0.7143
+Recall: 0.8333
+F1 Score: 0.7692
+Confusion Matrix:
+[[22759    12]
+ [    6    30]]
+True Positive Rate (Fraudulent Transactions): 0.8333
+----------------------------------------
+Method: ADASYN
+ROC AUC Score: 0.9744
+Precision: 0.6122
+Recall: 0.8333
+F1 Score: 0.7059
+Confusion Matrix:
+[[22752    19]
+ [    6    30]]
+True Positive Rate (Fraudulent Transactions): 0.8333
+----------------------------------------
+Method: AHC
+ROC AUC Score: 0.9832
+Precision: 0.8529
+Recall: 0.8056
+F1 Score: 0.8286
+Confusion Matrix:
+[[22766     5]
+ [    7    29]]
+True Positive Rate (Fraudulent Transactions): 0.8056
+----------------------------------------
+Method: LLE_SMOTE
+ROC AUC Score: 0.9755
+Precision: 0.8788
+Recall: 0.8056
+F1 Score: 0.8406
+Confusion Matrix:
+[[22767     4]
+ [    7    29]]
+True Positive Rate (Fraudulent Transactions): 0.8056
+----------------------------------------
+Method: distance_SMOTE
+ROC AUC Score: 0.9857
+Precision: 0.8571
+Recall: 0.8333
+F1 Score: 0.8451
+Confusion Matrix:
+[[22766     5]
+ [    6    30]]
+True Positive Rate (Fraudulent Transactions): 0.8333
+----------------------------------------
+Method: SMMO
+ROC AUC Score: 0.9842
+Precision: 0.8387
+Recall: 0.7222
+F1 Score: 0.7761
+Confusion Matrix:
+[[22766     5]
+ [   10    26]]
+True Positive Rate (Fraudulent Transactions): 0.7222
+----------------------------------------
+Method: polynom_fit_SMOTE_bus
+ROC AUC Score: 0.9915
+Precision: 0.8235
+Recall: 0.7778
+F1 Score: 0.8000
+Confusion Matrix:
+[[22765     6]
+ [    8    28]]
+True Positive Rate (Fraudulent Transactions): 0.7778
+----------------------------------------
+Method: polynom_fit_SMOTE_mesh
+ROC AUC Score: 0.9819
+Precision: 0.6458
+Recall: 0.8611
+F1 Score: 0.7381
+Confusion Matrix:
+[[22754    17]
+ [    5    31]]
+True Positive Rate (Fraudulent Transactions): 0.8611
+----------------------------------------
+Method: polynom_fit_SMOTE_star
+ROC AUC Score: 0.9850
+Precision: 0.8485
+Recall: 0.7778
+F1 Score: 0.8116
+Confusion Matrix:
+[[22766     5]
+ [    8    28]]
+True Positive Rate (Fraudulent Transactions): 0.7778
+----------------------------------------
+Method: polynom_fit_SMOTE_poly
+ROC AUC Score: 0.9861
+Precision: 0.8710
+Recall: 0.7500
+F1 Score: 0.8060
+Confusion Matrix:
+[[22767     4]
+ [    9    27]]
+True Positive Rate (Fraudulent Transactions): 0.7500
+----------------------------------------
+
+Best Method: SMOTE
+Best True Positive Rate (Fraudulent Transactions): 0.8611
+Best ROC AUC Score: 0.9762
+Best Precision: 0.7561
+Best Recall: 0.8611
+Best F1 Score: 0.8052
+Best Confusion Matrix:
+[[22761    10]
+ [    5    31]]
