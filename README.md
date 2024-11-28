@@ -65,7 +65,7 @@ Performed grid search for optimal parameters for each classifier:
 ## 🛠️ Installation and Usage
 
 Clone the repository:
-git clone https://github.com/yourusername/credit-card-fraud-detection.git
+git clone https://github.com/ShayanAlahyari/credit-card-fraud-detection.git
 cd credit-card-fraud-detection
 
 ### 💡 Key Learnings
