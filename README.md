@@ -62,6 +62,14 @@ Performed grid search for optimal parameters for each classifier:
 - **Gradient Boosting:** `learning_rate`, `max_depth`
 - **XGBoost:** `n_estimators`, `max_depth`, `learning_rate`
 
+## 🛠️ Installation and Usage
+
+### Clone the repository:
+```bash
+git clone https://github.com/yourusername/credit-card-fraud-detection.git
+cd credit-card-fraud-detection
+
+
 
 
 
