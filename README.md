@@ -64,13 +64,11 @@ Performed grid search for optimal parameters for each classifier:
 
 ## 🛠️ Installation and Usage
 
-### Clone the repository:
-```bash
+Clone the repository:
 git clone https://github.com/yourusername/credit-card-fraud-detection.git
 cd credit-card-fraud-detection
 
 ### 💡 Key Learnings
-```bash
 - Imbalanced datasets require tailored techniques like **SMOTE**.
 - Ensemble models like **XGBoost** outperform simpler models.
 - Neural networks offer high accuracy but are resource-intensive.
