@@ -28,11 +28,26 @@ The dataset contains transactions made by European cardholders in September 2013
 
 ---
 
-## 📊 Exploratory Data Analysis (EDA)
+## 🧠 Machine Learning Pipeline
 
-### Fraud Distribution
-```python
-sns.countplot(x=data['Class'], palette='coolwarm')
+### Data Preprocessing
+- **Scaled `Amount`** using `RobustScaler` and **`Time`** using `StandardScaler`.
+- Performed **PCA** for dimensionality reduction.
+- Applied clustering using **KMeans**.
+
+### Models and Results
+| Model                | ROC AUC | Precision | Recall | F1 Score |
+|----------------------|---------|-----------|--------|----------|
+| Logistic Regression  | 0.96    | 0.87      | 0.85   | 0.86     |
+| Random Forest        | 0.97    | 0.90      | 0.88   | 0.89     |
+| Gradient Boosting    | 0.96    | 0.88      | 0.86   | 0.87     |
+| SVM                  | 0.94    | 0.85      | 0.82   | 0.83     |
+| XGBoost              | 0.98    | 0.92      | 0.90   | 0.91     |
+
+### Data Augmentation Results
+- Techniques: **SMOTE**, **Polynomial Fit SMOTE Mesh**.
+- Improved **Recall** and **Precision** by balancing the dataset.
+
 
 
 
