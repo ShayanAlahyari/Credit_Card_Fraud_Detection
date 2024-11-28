@@ -38,6 +38,7 @@ sns.countplot(x=data['Class'], palette='coolwarm')
 ### Feature Correlation
 ```python
 sns.heatmap(corr_matrix, cmap='coolwarm', annot=True)
-![Correlation Matrix](https://via.placeholder.com/800x400.png?text=Correlation+Matrix)
+![Correlation Matrix](http![e676359d-5959-4901-92a1-379c56d0079e](https://github.com/user-attachments/assets/120b5c32-d36b-42f0-abaf-8d5a9189fe8e)
+s://via.placeholder.com/800x400.png?text=Correlation+Matrix)
 
 
