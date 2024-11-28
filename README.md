@@ -33,3 +33,11 @@ The dataset contains transactions made by European cardholders in September 2013
 ### Fraud Distribution
 ```python
 sns.countplot(x=data['Class'], palette='coolwarm')
+
+
+### Feature Correlation
+```python
+sns.heatmap(corr_matrix, cmap='coolwarm', annot=True)
+![Correlation Matrix](https://via.placeholder.com/800x400.png?text=Correlation+Matrix)
+
+
