@@ -60,6 +60,33 @@ The dataset contains transactions made by European cardholders in September 2013
 model.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=10, batch_size=64)
 
 
+## ⚙️ Hyperparameter Tuning
+Performed grid search for optimal parameters for each classifier:
+- **Logistic Regression:** `C`, `solver`
+- **Random Forest:** `n_estimators`, `max_depth`
+- **Gradient Boosting:** `learning_rate`, `max_depth`
+- **XGBoost:** `n_estimators`, `max_depth`, `learning_rate`
+
+---
+
+## 🛠️ Installation and Usage
+
+### Clone the repository:
+```bash
+git clone https://github.com/yourusername/credit-card-fraud-detection.git
+cd credit-card-fraud-detection
+
+## 💡 Key Learnings
+- Imbalanced datasets require tailored techniques like **SMOTE**.
+- Ensemble models like **XGBoost** outperform simpler models.
+- Neural networks offer high accuracy but are resource-intensive.
+
+## 🌟 Acknowledgments
+- **[Kaggle Credit Card Fraud Detection Dataset](https://www.kaggle.com/mlg-ulb/creditcardfraud)**
+- Open-source libraries: **NumPy**, **pandas**, **scikit-learn**, **TensorFlow**, **Seaborn**
+
+
+
 
 
 
