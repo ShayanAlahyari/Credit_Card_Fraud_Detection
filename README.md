@@ -58,15 +58,15 @@ The dataset contains transactions made by European cardholders in September 2013
 ### Training
 ```python
 model.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=10, batch_size=64)
+###
 
-
-## ⚙️ Hyperparameter Tuning
+### ⚙️ Hyperparameter Tuning
 Performed grid search for optimal parameters for each classifier:
 - **Logistic Regression:** `C`, `solver`
 - **Random Forest:** `n_estimators`, `max_depth`
 - **Gradient Boosting:** `learning_rate`, `max_depth`
 - **XGBoost:** `n_estimators`, `max_depth`, `learning_rate`
-
+###
 ---
 
 ## 🛠️ Installation and Usage
