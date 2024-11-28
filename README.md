@@ -1,6 +1,5 @@
 # 🚀 Credit Card Fraud Detection: A Machine Learning Approach
 
-![Project Banner](https://via.placeholder.com/1200x300.png?text=Credit+Card+Fraud+Detection+%F0%9F%94%92)
 
 ## 📚 Introduction
 Credit card fraud detection is critical for financial institutions to mitigate losses and protect customer assets. This project leverages machine learning models to detect fraudulent transactions using the Kaggle [Credit Card Fraud Detection Dataset](https://www.kaggle.com/mlg-ulb/creditcardfraud).
@@ -47,6 +46,19 @@ The dataset contains transactions made by European cardholders in September 2013
 ### Data Augmentation Results
 - Techniques: **SMOTE**, **Polynomial Fit SMOTE Mesh**.
 - Improved **Recall** and **Precision** by balancing the dataset.
+
+## 🧑‍💻 Neural Network Implementation
+
+### Architecture
+- **Input Layer**
+- **Dense Layers** (16 neurons, ReLU activation)
+- **Batch Normalization**
+- **Output Layer** (Sigmoid activation)
+
+### Training
+```python
+model.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=10, batch_size=64)
+
 
 
 
