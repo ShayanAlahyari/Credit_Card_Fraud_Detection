@@ -74,6 +74,9 @@ cd credit-card-fraud-detection
 - Neural networks offer high accuracy but are resource-intensive.
 
 
+### 🌟 Acknowledgments
+- **[Kaggle Credit Card Fraud Detection Dataset](https://www.kaggle.com/mlg-ulb/creditcardfraud)**
+- Open-source libraries: **NumPy**, **pandas**, **scikit-learn**, **TensorFlow**, **Seaborn**
 
 
 
